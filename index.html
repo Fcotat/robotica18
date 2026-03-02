@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ing. Francisco Cota - Portafolio de Robótica</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --accent: #e67e22;
+            --secondary: #34495e;
+            --bg: #f8f9fa;
+            --text: #333;
+        }
+
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            margin: 0; 
+            background-color: var(--bg); 
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        header { 
+            background: var(--primary); 
+            color: white; 
+            padding: 50px 20px; 
+            text-align: center;
+            border-bottom: 8px solid var(--accent);
+        }
+
+        header h1 { margin: 0; font-size: 2.5rem; letter-spacing: 1px; }
+        header p { margin-top: 10px; font-weight: 300; opacity: 0.9; }
+
+        .container { max-width: 1100px; margin: 30px auto; padding: 0 20px; }
+
+        h2 { 
+            color: var(--primary); 
+            border-left: 5px solid var(--accent); 
+            padding-left: 15px; 
+            margin-top: 40px;
+        }
+
+        /* Grid de Proyectos */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 25px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(0,0,0,0.15); }
+
+        .card-header {
+            background: var(--secondary);
+            color: white;
+            padding: 20px;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .card-body { padding: 25px; flex-grow: 1; }
+
+        .tech-tags { margin-bottom: 20px; }
+        .tag {
+            display: inline-block;
+            background: #e9ecef;
+            color: var(--secondary);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            margin-right: 8px;
+            text-transform: uppercase;
+        }
+
+        /* Botón de Descarga */
+        .btn-download {
+            display: block;
+            background: var(--accent);
+            color: white;
+            text-align: center;
+            padding: 12px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: background 0.3s;
+            margin-top: auto;
+        }
+
+        .btn-download:hover { background: #d35400; }
+
+        .btn-download i { margin-right: 8px; }
+
+        /* Sección de Información Institucional */
+        .info-section {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin-top: 50px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        footer { 
+            text-align: center; 
+            padding: 60px 20px; 
+            background: var(--primary); 
+            color: white; 
+            margin-top: 80px; 
+        }
+
+        footer p { margin: 5px 0; font-size: 0.9rem; }
+
+        @media (max-width: 600px) {
+            header h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Ing. Francisco Cota Toledo</h1>
+    <p>Maestro de la T&eacute;cnica 18 | Catedr&aacute;tico en Bachillerato Asunci&oacute;n Ixtaltepec</p>
+</header>
+
+<div class="container">
+    
+    <h2>Proyectos de Laboratorio</h2>
+    <p>Haz clic en el bot&oacute;n para descargar el manual en formato PDF listo para tu reporte.</p>
+
+    <div class="project-grid">
+        
+        <div class="card">
+            <div class="card-header">Interruptor T&aacute;ctil (12V)</div>
+            <div class="card-body">
+                <div class="tech-tags">
+                    <span class="tag">MOSFET IRF3205</span>
+                    <span class="tag">1N4007</span>
+                    <span class="tag">FUENTE PC</span>
+                </div>
+                <p>Uso del transistor de potencia MOSFET para activar un ventilador mediante el tacto humano y capacitancia de compuerta.</p>
+                <a href="reporte_mosfet.pdf" download="Manual_MOSFET_Ing_Cota.pdf" class="btn-download">
+                    &#128190; Descargar Reporte PDF
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">Sensor de Oscuridad (5V)</div>
+            <div class="card-body">
+                <div class="tech-tags">
+                    <span class="tag">LDR</span>
+                    <span class="tag">BC547</span>
+                    <span class="tag">LEDS</span>
+                </div>
+                <p>Circuito autom&aacute;tico que detecta la ausencia de luz para encender un sistema de iluminaci&oacute;n LED de baja potencia.</p>
+                <a href="reporte_ldr.pdf" download="Manual_LDR_Ing_Cota.pdf" class="btn-download">
+                    &#128190; Descargar Reporte PDF
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">Dibujante Autom&aacute;tico</div>
+            <div class="card-body">
+                <div class="tech-tags">
+                    <span class="tag">ARDUINO</span>
+                    <span class="tag">L298N</span>
+                    <span class="tag">RECICLAJE</span>
+                </div>
+                <p>Proyecto de rob&oacute;tica avanzada utilizando motores paso a paso de impresoras recicladas para crear un plotter funcional.</p>
+                <a href="#" class="btn-download" style="background: #95a5a6; cursor: not-allowed;">
+                    En Desarrollo...
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="info-section">
+        <h3>Aviso a los Estudiantes</h3>
+        <p>Recuerden que para que el reporte sea v&aacute;lido, deben incluir sus propias fotograf&iacute;as del circuito armado en la protoboard. No se aceptan diagramas gen&eacute;ricos de internet.</p>
+        <p><strong>Grupos de Rob&oacute;tica:</strong> Tecnochicas y Eoloteen, favor de revisar el calendario de la pr&oacute;xima competencia nacional.</p>
+    </div>
+
+</div>
+
+<footer>
+    <p><strong>Ing. Francisco Cota Toledo</strong></p>
+    <p>Especialista en Tecnolog&iacute;a e Ingenier&iacute;a</p>
+    <p>El Espinal - Tehuantepec - Ixtaltepec | Oaxaca, M&eacute;xico</p>
+    <p>&copy; 2026 - Educaci&oacute;n y Rob&oacute;tica</p>
+</footer>
+
+</body>
+</html>
